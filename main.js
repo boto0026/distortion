@@ -7,22 +7,24 @@
 
 "use srict"
 
-document.addEventListener("DOMContentLoaded", loadScript );
+document.addEventListener("DOMContentLoaded", loadScript);
 
 async function loadScript() {
     let jsonObject = await fetch("https://kea-alt-del.dk/kata-distortion/");
     let myJson = await jsonObject.json();
 
-    function show(){
-        document.querySelector(".bar").textContent = `${myJson.inQueue}`;
+    function show() {
+        document.querySelector(".barnumber").textContent = `${myJson.inQueue}`;
+        document.querySelector(".bar").style.width = `${myJson.inQueue}0px`;
+
+        document.querySelector(".infotext").textContent = `${myJson.inQueue} people in line`;
+
     }
 
     show();
 
 }
 
-setInterval(function(){
+setInterval(function () {
     loadScript();
 }, 10000);
-
-
