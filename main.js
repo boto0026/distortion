@@ -16,8 +16,9 @@ async function loadScript() {
     function show() {
         document.querySelector(".barnumber").textContent = `${myJson.inQueue}`;
         document.querySelector(".bar").style.width = `${myJson.inQueue}0px`;
+        document.querySelector(".info-container").style.width = `${myJson.inQueue}0px`;
 
-        document.querySelector(".infotext").textContent = `${myJson.inQueue} people in line`;
+        document.querySelector(".infotext").textContent = `${myJson.inQueue} number of people in line`;
 
     }
 
